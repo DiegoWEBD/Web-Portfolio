@@ -10,7 +10,7 @@ const NavBar = () => {
     }
 
     return(
-        <nav className='bg-neutral-900 rounded px-4 py-2.5 shadow-lg shadow-black/60'>
+        <nav className='bg-neutral-900 rounded px-4 py-2.5 border-b-2'>
             <div className='flex flex-wrap justify-between items-center md:mx-7'>
                 <Link to='/' className='font-extrabold tracking-wider text-2xl italic text-white'>DWebDev</Link>
             
@@ -32,16 +32,16 @@ const NavBar = () => {
 
                 <div className={ !open ? 'hidden w-full md:block md:w-auto' : 'w-full md:block md:w-auto'} >
                     <ul className='flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:font-medium'>
-                        <Link onClick={ () => setOpen(false) } to='/' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link onClick={ () => setOpen(false) } to='/' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
                             <li>Inicio</li>
                         </Link>
-                        <Link onClick={ () => setOpen(false) } to='/acerca-de' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link onClick={ () => setOpen(false) } to='/acerca-de' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
                             <li>Acerca de</li>
                         </Link>
-                        <Link onClick={ () => setOpen(false) } to='/proyectos' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link onClick={ () => setOpen(false) } to='/proyectos' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
                             <li>Proyectos</li>
                         </Link>
-                        <Link onClick={ () => setOpen(false) } to='contacto' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link onClick={ () => setOpen(false) } to='contacto' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
                             <li>Contacto</li>
                         </Link>
                     </ul>
