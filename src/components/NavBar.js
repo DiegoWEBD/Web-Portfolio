@@ -10,9 +10,9 @@ const NavBar = () => {
     }
 
     return(
-        <nav className='rounded px-4 py-2.5 border-b-2 border-slate-300'>
-            <div className='container-lg flex flex-wrap justify-between items-center md:mx-7'>
-                <Link to='/' className='font-semibold text-xl text-white'>DWebDev</Link>
+        <nav className='bg-neutral-900 rounded px-4 py-2.5 shadow-lg shadow-black/60'>
+            <div className='flex flex-wrap justify-between items-center md:mx-7'>
+                <Link to='/' className='font-extrabold tracking-wider text-2xl italic text-white'>DWebDev</Link>
             
                 <div className="block md:hidden">
                     <button 

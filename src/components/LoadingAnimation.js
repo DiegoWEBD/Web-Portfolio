@@ -1,9 +1,7 @@
 const LoadingAnimation = () => {
 
     return(
-        <div className='h-10 w-10 bg-gradient-to-l from-cyan-100 to-blue-700 flex justify-center items-center rounded-full animate-spin'>
-            <div className='h-8 w-8 rounded-full bg-zinc-900'></div>
-        </div>
+        <div className='h-12 w-12 border-[6px] border-t-blue-500 rounded-full animate-spin' />
     )
 }
 
