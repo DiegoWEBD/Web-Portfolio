@@ -13,7 +13,7 @@ const App = () => {
   }
   
   return (
-    <div className='min-h-screen text-slate-200 bg-gradient-to-r from-slate-900 to-slate-800 p-2 font-mono'>
+    <div className='min-h-screen text-slate-200 bg-[#0e0e0e] p-2 font-mono'>
       <NavBar />
       <section className='mt-14 md:mt-20 w-10/12 mx-auto'>
         <Routes>

@@ -10,7 +10,7 @@ const NavBar = () => {
     }
 
     return(
-        <nav className='rounded px-4 py-2.5 bg-zinc-900 border-2 border-indigo-800'>
+        <nav className='rounded px-4 py-2.5 border-b-2 border-slate-300'>
             <div className='container-lg flex flex-wrap justify-between items-center md:mx-7'>
                 <Link to='/' className='font-semibold text-xl text-white'>DWebDev</Link>
             

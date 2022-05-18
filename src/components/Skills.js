@@ -34,7 +34,7 @@ const Skills = ({ cache }) => {
             { loading ? <LoadingAnimation /> : null }
             {
                 !loading && skills.length === 0
-                    ?   <p className="p-2 border-2 border-indigo-800 rounded text-white mb-5 text-xl">Aún no tengo skills registradas :c</p>
+                    ?   <p className="p-2 border-2 border-zinc-900 rounded text-zinc-900 mb-5 text-xl">Aún no tengo skills registradas :c</p>
                     :   skills.map(skill => <Skill key={skill.name} skill={skill} />)
                                 
             }

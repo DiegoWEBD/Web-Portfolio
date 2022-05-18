@@ -71,7 +71,7 @@ const ContactForm = () => {
                     Nombre
                 </label>
                 <input 
-                    className="shadow appearance-none border border-blue-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    className="shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                     type="text" 
                     {...formik.getFieldProps('name')} 
                     placeholder="Nombre" 
@@ -84,7 +84,7 @@ const ContactForm = () => {
                     Correo de contacto
                 </label>
                 <input 
-                    className="shadow appearance-none border border-blue-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    className="shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                     type="email" 
                     {...formik.getFieldProps('email')}
                     placeholder="Correo electrónico" 
@@ -97,7 +97,7 @@ const ContactForm = () => {
                     Mensaje
                 </label>
                 <textarea 
-                    className="shadow appearance-none border border-blue-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
+                    className="shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
                     type="text" 
                     {...formik.getFieldProps('message')} 
                     placeholder="Escribe aquí tu mensaje..."
@@ -112,7 +112,7 @@ const ContactForm = () => {
             </div>
 
             <div className='flex justify-center mb-5'>
-                <button type="submit" className=" text-indigo-600 hover:text-white hover:bg-indigo-600 transition-all text-lg border-[2px] sm:border-[3px] border-indigo-600 font-semibold tracking-wide py-1 px-6 rounded-full focus:outline-none focus:shadow-outline">
+                <button type="submit" className=" text-indigo-700 hover:text-white hover:bg-indigo-700 transition-all text-lg border-[2px] sm:border-[3px] border-indigo-700 font-semibold tracking-wide py-1 px-6 rounded-full focus:outline-none focus:shadow-outline">
                     Enviar
                 </button>
             </div>
