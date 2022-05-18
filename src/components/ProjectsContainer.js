@@ -20,7 +20,7 @@ const ProjectsContainer = ({ cache }) => {
 
     useEffect(() => {
 
-        if(cache.projects.length !== 0) setProjects(cache.projects)
+        if(cache.projects) setProjects(cache.projects)
         else getProjectsFromAPI()
     }, [])
 

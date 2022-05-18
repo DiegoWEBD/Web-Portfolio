@@ -1,6 +1,8 @@
 {
   "name": "portfolio",
+  "homepage": "https://diego-maldonado.com",
   "version": "0.1.0",
+  "description": "My web portfolio made with react",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

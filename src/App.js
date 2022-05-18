@@ -7,10 +7,7 @@ import Contact from './components/pages/Contact'
 
 const App = () => {
 
-  const cache = {
-    skills: [],
-    projects: []
-  }
+  const cache = {}
   
   return (
     <div className='min-h-screen text-slate-200 bg-neutral-900 p-2 font-mono'>

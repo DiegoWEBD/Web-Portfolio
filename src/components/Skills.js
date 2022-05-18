@@ -20,7 +20,7 @@ const Skills = ({ cache }) => {
 
     useEffect(() => {
 
-        if(cache.skills.length !== 0) setSkills(cache.skills)
+        if(cache.skills) setSkills(cache.skills)
         else getSkillsFromAPI()
     }, [])
 
