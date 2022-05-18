@@ -7,12 +7,7 @@ const ProjectsContainer = ({ cache }) => {
     const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const getProjects = async () => {
-        
-        if(cache.projects.length !== 0) {
-            setProjects(cache.projects)
-            return
-        }
+    const getProjectsFromAPI = async () => {
         
         setLoading(true)
         const response = await fetch('https://api.diego-maldonado.com/projects')
@@ -24,7 +19,9 @@ const ProjectsContainer = ({ cache }) => {
     }
 
     useEffect(() => {
-        getProjects()
+
+        if(cache.projects.length !== 0) setProjects(cache.projects)
+        else getProjectsFromAPI()
     }, [])
 
     return (

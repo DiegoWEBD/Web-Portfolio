@@ -7,12 +7,7 @@ const Skills = ({ cache }) => {
     const [skills, setSkills] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const getSkills = async () => {
-
-        if(cache.skills.length !== 0){
-            setSkills(cache.skills)
-            return
-        }
+    const getSkillsFromAPI = async () => {
 
         setLoading(true)
         const response = await fetch('https://api.diego-maldonado.com/skills')
@@ -24,7 +19,9 @@ const Skills = ({ cache }) => {
     }
 
     useEffect(() => {
-        getSkills()
+
+        if(cache.skills.length !== 0) setSkills(cache.skills)
+        else getSkillsFromAPI()
     }, [])
 
     
