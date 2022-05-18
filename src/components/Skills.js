@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Skill from './Skill'
 import LoadingAnimation from './LoadingAnimation'
+import { BASE_API_URL } from '../configs'
 
 const Skills = ({ cache }) => {
 
@@ -10,7 +11,7 @@ const Skills = ({ cache }) => {
     const getSkillsFromAPI = async () => {
 
         setLoading(true)
-        const response = await fetch('https://api.diego-maldonado.com/skills')
+        const response = await fetch(`${BASE_API_URL}/skills`)
         const data = await response.json()
 
         setLoading(false)

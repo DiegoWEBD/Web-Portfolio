@@ -1,6 +1,7 @@
 import { AiFillGithub } from 'react-icons/ai'
+import ProjectSkills from './ProjectSkills'
 
-const Project = ({ project }) => {
+const Project = ({ project, cache }) => {
     
     return(
         <div className='w-[440px] flex justify-center'>
@@ -29,8 +30,12 @@ const Project = ({ project }) => {
                                 </div>
                             :   null
                     }
-                    
-                    
+                    <div className='mt-4'>
+                        <ProjectSkills 
+                            project={project} 
+                            cache={cache}    
+                        />
+                    </div>
                 </div>
             </div>
         </div>
