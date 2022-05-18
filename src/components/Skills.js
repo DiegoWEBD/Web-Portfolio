@@ -2,22 +2,32 @@ import { useState, useEffect } from 'react'
 import Skill from './Skill'
 import LoadingAnimation from './LoadingAnimation'
 
-const Skills = () => {
+const Skills = ({ cache }) => {
 
     const [skills, setSkills] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
+
+    const getSkills = async () => {
+
+        if(cache.skills.length !== 0){
+            setSkills(cache.skills)
+            return
+        }
+
+        setLoading(true)
+        const response = await fetch('https://api.diego-maldonado.com/skills')
+        const data = await response.json()
+
+        setLoading(false)
+        setSkills(data)
+        cache.skills = data
+    }
 
     useEffect(() => {
         getSkills()
     }, [])
 
-    const getSkills = async () => {
-        const response = await fetch('https://api.diego-maldonado.com/skills')
-        const data = await response.json()
-        setLoading(false)
-        setSkills(data)
-    }
-
+    
     return (
         <div className="py-3 flex flex-wrap justify-center mx-auto md:max-h-96 overflow-auto md:w-11/12">
             

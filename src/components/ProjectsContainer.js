@@ -2,24 +2,33 @@ import { useState, useEffect } from 'react'
 import Project from './Project'
 import LoadingAnimation from './LoadingAnimation'
 
-const ProjectsContainer = () => {
+const ProjectsContainer = ({ cache }) => {
 
     const [projects, setProjects] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
+
+    const getProjects = async () => {
+        
+        if(cache.projects.length !== 0) {
+            setProjects(cache.projects)
+            return
+        }
+        
+        setLoading(true)
+        const response = await fetch('https://api.diego-maldonado.com/projects')
+        const data = await response.json()
+
+        cache.projects = data
+        setProjects(data)
+        setLoading(false)
+    }
 
     useEffect(() => {
         getProjects()
     }, [])
 
-    const getProjects = async () => {
-        const response = await fetch('https://api.diego-maldonado.com/projects')
-        const data = await response.json()
-        setLoading(false)
-        setProjects(data)
-    }
-
     return (
-        <div className="py-3 flex flex-wrap justify-center">
+        <div className="py-3 flex flex-wrap justify-around items-center">
             
             { loading ? <LoadingAnimation /> : null }
             {

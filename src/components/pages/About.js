@@ -1,7 +1,7 @@
 import Skills from '../Skills'
 import ProfileInfo from '../ProfileInfo'
 
-const About = () => {
+const About = ({ cache }) => {
 
     return(
         <div className="container md:bg-zinc-900 mb-20 sm:mb-10 md:flex mx-auto rounded-xl md:shadow-xl md:shadow-black">
@@ -11,7 +11,7 @@ const About = () => {
             
             <div className="bg-zinc-900 md:w-2/3 p-6 text-slate-200 mt-10 md:mt-0 rounded-xl shadow-xl shadow-black md:shadow-none">
                 <p className="text-2xl lg:text-3xl font-bold mb-8 text-center">Mis Skills</p>       
-                <Skills />
+                <Skills cache={cache} />
             </div>
         </div>
     )

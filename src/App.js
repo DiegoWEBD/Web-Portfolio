@@ -6,6 +6,11 @@ import Projects from './components/pages/Projects'
 import Contact from './components/pages/Contact'
 
 const App = () => {
+
+  const cache = {
+    skills: [],
+    projects: []
+  }
   
   return (
     <div className='min-h-screen text-slate-200 bg-gradient-to-r from-slate-900 to-slate-800 p-2 font-mono'>
@@ -13,8 +18,8 @@ const App = () => {
       <section className='mt-14 md:mt-20 w-10/12 mx-auto'>
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route path='/acerca-de' element={<About />} />
-          <Route path='/proyectos' element={<Projects />} />
+          <Route path='/acerca-de' element={<About cache={cache} />} />
+          <Route path='/proyectos' element={<Projects cache={cache} />} />
           <Route path='/contacto' element={<Contact />} />
         </Routes>
       </section>
