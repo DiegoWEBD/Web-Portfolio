@@ -1,27 +1,32 @@
 import { useFormik } from 'formik'
 import { useState } from 'react'
-import  ErrorMessage  from './ErrorMessage'
-import  SuccessNotification  from './SuccessNotification'
-import emailjs from 'emailjs-com'
+import  ErrorMessage  from './messages/ErrorMessage'
+import  SuccessNotification  from './messages/SuccessNotification'
+import ErrorNotification from './messages/ErrorNotification'
+import axios from 'axios'
+import { BASE_API_URL } from '../configs'
 
 const ContactForm = () => {
 
     const [message_sent, setMessageSent] = useState(false)
+    const [message_failed, setMessageFailed] = useState(false)
 
-    const sendEmail = (target) => {
-        emailjs.sendForm(
-            'service_sx6z1ba', 
-            'template_wf7ob3o', 
-            target, 
-            'lxor4yzaQl9MquSI1'
-        )
-        .then(() => {
-            setMessageSent(true)
-            setTimeout(() => {
-                setMessageSent(false) // Just to clear the message
-            }, 3000)
-        })
-        .catch(err => console.log(err))
+    const showSuccessNotification = async () => {
+        setMessageSent(true)
+        setTimeout(() => setMessageSent(false), 3000)
+    }
+
+    const showErrorNotification = async () => {
+        setMessageFailed(true)
+        setTimeout(() => setMessageFailed(false), 3000)
+    }
+
+    const sendEmail = async ({ name, email, message }) => {
+
+        await axios
+                .get(`${BASE_API_URL}/contact/${name}/${email}/${message}`)
+                .then(() => showSuccessNotification())
+                .catch(() => showErrorNotification())
     }
 
     const onSubmit = (values) => {
@@ -54,17 +59,8 @@ const ContactForm = () => {
         onSubmit,
     })
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-
-        if(!formik.errors){
-            sendEmail(event.target)
-        }
-        
-    }
-
     return (
-        <form onSubmit={handleSubmit} className="bg-white rounded p-5 mb-4">
+        <form onSubmit={formik.handleSubmit} className="bg-white rounded p-5 mb-4">
         
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -108,6 +104,12 @@ const ContactForm = () => {
             <div className='mb-8'>
             {
                 message_sent ? <SuccessNotification>Mensaje enviado</SuccessNotification> : null
+            }
+            </div>
+
+            <div className='mb-8'>
+            {
+                message_failed ? <ErrorNotification>Ha ocurrido un error</ErrorNotification> : null
             }
             </div>
 
