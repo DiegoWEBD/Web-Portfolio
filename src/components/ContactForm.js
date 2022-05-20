@@ -3,11 +3,13 @@ import { useState } from 'react'
 import  ErrorMessage  from './messages/ErrorMessage'
 import  SuccessNotification  from './messages/SuccessNotification'
 import ErrorNotification from './messages/ErrorNotification'
+import LoadingAnimation from './LoadingAnimation'
 import axios from 'axios'
 import { BASE_API_URL } from '../configs'
 
 const ContactForm = () => {
 
+    const [sending_message, setSendingMessage] = useState(false)
     const [message_sent, setMessageSent] = useState(false)
     const [message_failed, setMessageFailed] = useState(false)
 
@@ -23,9 +25,13 @@ const ContactForm = () => {
 
     const sendEmail = async ({ name, email, message }) => {
 
+        setSendingMessage(true)
         await axios
                 .get(`${BASE_API_URL}/contact/${name}/${email}/${message}`)
-                .then(() => showSuccessNotification())
+                .then(() => {
+                    setSendingMessage(false)
+                    showSuccessNotification()
+                })
                 .catch(() => showErrorNotification())
     }
 
@@ -99,6 +105,12 @@ const ContactForm = () => {
                     placeholder="Escribe aquí tu mensaje..."
                 />
                 { formik.touched.message && formik.errors.message ? <ErrorMessage>{formik.errors.message}</ErrorMessage> : null}
+            </div>
+
+            <div className='mb-8 flex justify-center'>
+            {
+                sending_message ? <LoadingAnimation bg_color='white' /> : null 
+            }
             </div>
 
             <div className='mb-8'>

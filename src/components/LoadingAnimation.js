@@ -1,7 +1,10 @@
-const LoadingAnimation = () => {
+const LoadingAnimation = ({ bg_color }) => {
+
+    const style = `h-10 w-10 border-[4px] border-${bg_color} border-t-blue-500 rounded-full animate-spin`
+    console.log(style)
 
     return(
-        <div className='h-12 w-12 border-[6px] border-t-blue-500 rounded-full animate-spin' />
+        <div className={style} />
     )
 }
 
