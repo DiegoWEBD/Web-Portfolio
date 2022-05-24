@@ -26,16 +26,16 @@ const ProjectSkills = ({ project, cache }) => {
     }, [])
 
     return(
-        <div className='flex'>
-            <p className='bg-indigo-700 mr-5 px-2 rounded-full'>skills</p>
-            <div className='flex flex-wrap max-w-full items-center'>
+        <div className='flex items-center'>
+            <p className='bg-indigo-700 h-fit mr-5 px-2 rounded-full'>skills</p>
+            <div className='flex flex-wrap max-w-full items-center w-full'>
                 {
                     project_skills.map(skill => 
                         <img 
                             key={skill.id} 
                             src={skill.logo_route} 
                             alt={skill.name}
-                            className='h-5 mr-2' 
+                            className='h-5 mr-2 my-1' 
                         />    
                     )
                 }

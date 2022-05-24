@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-const NavBar = () => {
+const NavBar = ({ current_route }) => {
 
     const [open, setOpen] = useState(false)
 
@@ -32,16 +32,44 @@ const NavBar = () => {
 
                 <div className={ !open ? 'hidden w-full md:block md:w-auto' : 'w-full md:block md:w-auto'} >
                     <ul className='flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:font-medium'>
-                        <Link onClick={ () => setOpen(false) } to='/' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link 
+                            onClick={ () => setOpen(false) } 
+                            to='/' 
+                            className={ current_route === '/'
+                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
+                                      }
+                        >
                             <li>Inicio</li>
                         </Link>
-                        <Link onClick={ () => setOpen(false) } to='/acerca-de' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link 
+                            onClick={ () => setOpen(false) } 
+                            to='/acerca-de' 
+                            className={ current_route === '/acerca-de'
+                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
+                                      }
+                        >
                             <li>Acerca de</li>
                         </Link>
-                        <Link onClick={ () => setOpen(false) } to='/proyectos' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link 
+                            onClick={ () => setOpen(false) } 
+                            to='/proyectos' 
+                            className={ current_route === '/proyectos'
+                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
+                                      }
+                        >
                             <li>Proyectos</li>
                         </Link>
-                        <Link onClick={ () => setOpen(false) } to='contacto' className='py-2 pr-4 pl-4 md:p-0 text-gray-400 md:hover:text-indigo-700 hover:bg-gray-700 hover:text-white md:hover:bg-transparent'>
+                        <Link 
+                            onClick={ () => setOpen(false) } 
+                            to='contacto' 
+                            className={ current_route === '/contacto'
+                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
+                                      }
+                        >
                             <li>Contacto</li>
                         </Link>
                     </ul>

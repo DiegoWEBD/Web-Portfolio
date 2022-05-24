@@ -1,7 +1,12 @@
+import { useEffect } from 'react'
 import Skills from '../Skills'
 import ProfileInfo from '../ProfileInfo'
 
-const About = ({ cache }) => {
+const About = ({ cache, setCache, setCurrentRoute }) => {
+
+    useEffect(() => {
+        setCurrentRoute('/acerca-de')
+    }, [])
 
     return(
         <div className="container md:bg-neutral-800 mb-20 sm:mb-10 md:flex mx-auto rounded-xl md:shadow-lg md:shadow-black/70">
@@ -11,7 +16,7 @@ const About = ({ cache }) => {
             
             <div className="bg-neutral-800 md:w-2/3 p-6 text-slate-200 mt-10 md:mt-0 rounded-xl shadow-xl shadow-black/60 md:shadow-none">
                 <p className="text-2xl lg:text-3xl font-bold my-8 text-center">Mis Habilidades</p>       
-                <Skills cache={cache} />
+                <Skills cache={cache} setCache={setCache} />
             </div>
         </div>
     )

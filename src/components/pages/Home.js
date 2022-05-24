@@ -1,4 +1,10 @@
-const Home = () => {
+import { useEffect } from 'react'
+
+const Home = ({ setCurrentRoute }) => {
+
+    useEffect(() => {
+        setCurrentRoute('/')
+    }, [])
 
     return(
         <div className="md:flex content-center">

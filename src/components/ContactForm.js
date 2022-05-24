@@ -66,10 +66,10 @@ const ContactForm = () => {
     })
 
     return (
-        <form onSubmit={formik.handleSubmit} className="bg-white rounded p-5 mb-4">
+        <form onSubmit={formik.handleSubmit} className="text-sm bg-white rounded p-5 mb-4">
         
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+                <label className="block text-gray-700 font-bold mb-2">
                     Nombre
                 </label>
                 <input 
@@ -82,7 +82,7 @@ const ContactForm = () => {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+                <label className="block text-gray-700 font-bold mb-2">
                     Correo de contacto
                 </label>
                 <input 
@@ -95,11 +95,11 @@ const ContactForm = () => {
             </div>
 
             <div className="mb-8">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
+                <label className="block text-gray-700 font-bold mb-2">
                     Mensaje
                 </label>
                 <textarea 
-                    className="shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
+                    className="text-[11px] sm:text-sm shadow appearance-none border border-indigo-600 rounded w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
                     type="text" 
                     {...formik.getFieldProps('message')} 
                     placeholder="Escribe aquí tu mensaje..."

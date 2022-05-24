@@ -3,7 +3,7 @@ import Project from './Project'
 import LoadingAnimation from './LoadingAnimation'
 import { BASE_API_URL } from '../configs'
 
-const ProjectsContainer = ({ cache }) => {
+const ProjectsContainer = ({ cache, setCache }) => {
 
     const [projects, setProjects] = useState([])
     const [loading, setLoading] = useState(false)
@@ -13,10 +13,14 @@ const ProjectsContainer = ({ cache }) => {
         setLoading(true)
         const response = await fetch(`${BASE_API_URL}/projects`)
         const data = await response.json()
-
-        cache.projects = data
-        setProjects(data)
+                
         setLoading(false)
+        setProjects(data)
+
+        setCache({
+            ...cache,
+            projects: data
+        })
     }
 
     useEffect(() => {

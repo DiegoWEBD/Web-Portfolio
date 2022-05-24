@@ -3,7 +3,7 @@ import Skill from './Skill'
 import LoadingAnimation from './LoadingAnimation'
 import { BASE_API_URL } from '../configs'
 
-const Skills = ({ cache }) => {
+const Skills = ({ cache, setCache }) => {
 
     const [skills, setSkills] = useState([])
     const [loading, setLoading] = useState(false)
@@ -16,7 +16,11 @@ const Skills = ({ cache }) => {
 
         setLoading(false)
         setSkills(data)
-        cache.skills = data
+        
+        setCache({
+            ...cache, 
+            skills: data
+        })
     }
 
     useEffect(() => {
