@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Project from './Project'
+import ProjectsList from './ProjectsList'
 import LoadingAnimation from './LoadingAnimation'
 import { BASE_API_URL } from '../configs'
 
@@ -30,13 +30,13 @@ const ProjectsContainer = ({ cache, setCache }) => {
     }, [])
 
     return (
-        <div className="py-3 flex flex-wrap justify-around items-center">
+        <div className="flex flex-wrap justify-center">
             
             { loading ? <LoadingAnimation bg_color='#171717' /> : null }
             {
                 !loading && projects.length === 0
                     ?   <p className="p-3 border-2 border-indigo-800 rounded text-white mb-5 text-xl">Aún no tengo ningún proyecto registrado :c</p>
-                    :   projects.map(project => <Project key={project.id} project={project} cache={cache} />)
+                    :   <ProjectsList projects={projects} cache={cache} setCache={setCache} />
             }
                 
         </div>

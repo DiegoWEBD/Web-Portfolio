@@ -5,7 +5,6 @@ const NavBar = ({ current_route }) => {
 
     const [open, setOpen] = useState(false)
     
-
     const openNavMenu = () => {
         setOpen(!open)
     }
