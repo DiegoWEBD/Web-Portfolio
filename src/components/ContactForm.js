@@ -66,14 +66,14 @@ const ContactForm = () => {
     })
 
     return (
-        <form onSubmit={formik.handleSubmit} className="text-sm bg-white rounded p-5 mb-4">
+        <form onSubmit={formik.handleSubmit} className="text-sm bg-[#f6f6f6] rounded p-5 mb-4">
         
             <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">
                     Nombre
                 </label>
                 <input 
-                    className="shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    className="bg-[#f6f6f6] shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                     type="text" 
                     {...formik.getFieldProps('name')} 
                     placeholder="Nombre" 
@@ -86,7 +86,7 @@ const ContactForm = () => {
                     Correo de contacto
                 </label>
                 <input 
-                    className="shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    className="bg-[#f6f6f6] shadow appearance-none border border-indigo-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                     type="email" 
                     {...formik.getFieldProps('email')}
                     placeholder="Correo electrónico" 
@@ -99,7 +99,7 @@ const ContactForm = () => {
                     Mensaje
                 </label>
                 <textarea 
-                    className="text-[11px] sm:text-sm shadow appearance-none border border-indigo-600 rounded w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
+                    className="bg-[#f6f6f6] text-[11px] sm:text-sm shadow appearance-none border border-indigo-600 rounded w-full h-20 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  
                     type="text" 
                     {...formik.getFieldProps('message')} 
                     placeholder="Escribe aquí tu mensaje..."
@@ -109,7 +109,7 @@ const ContactForm = () => {
 
             <div className='mb-8 flex justify-center'>
             {
-                sending_message ? <LoadingAnimation bg_color='white' /> : null 
+                sending_message ? <LoadingAnimation bg_color='#f6f6f6' /> : null 
             }
             </div>
 

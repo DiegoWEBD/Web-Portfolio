@@ -1,17 +1,16 @@
-import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 import ProjectsContainer from '../ProjectsContainer'
 
-const Projects = ({ cache, setCache, setCurrentRoute }) => {
-
-    useEffect(() => {
-        setCurrentRoute('/proyectos')
-    }, [])
+const Projects = ({ cache, setCache }) => {
 
     return (
-        <div className="mx-auto mb-10">
-            <p className="text-6xl mb-20 font-bold text-center text-slate-100">Proyectos</p>
+        <motion.div 
+            className="mx-auto mb-10"
+            initial={ { x: "100%", transition: { duration: 0.2 } } }
+            animate={ { x: 0, transition: { duration: 0.2 } } }
+        >
             <ProjectsContainer cache={cache} setCache={setCache} />
-        </div>
+        </motion.div>
     )
 }
 

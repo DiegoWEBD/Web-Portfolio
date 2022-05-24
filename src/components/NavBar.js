@@ -4,13 +4,14 @@ import { useState } from 'react'
 const NavBar = ({ current_route }) => {
 
     const [open, setOpen] = useState(false)
+    
 
     const openNavMenu = () => {
         setOpen(!open)
     }
 
     return(
-        <nav className='bg-neutral-900 rounded px-4 py-2.5 border-b-2'>
+        <nav className='bg-neutral-900 px-4 py-2.5 border-b-2 border-indigo-700'>
             <div className='flex flex-wrap justify-between items-center md:mx-7'>
                 <Link to='/' className='font-extrabold tracking-wider text-2xl italic text-white'>DWebDev</Link>
             
@@ -36,7 +37,7 @@ const NavBar = ({ current_route }) => {
                             onClick={ () => setOpen(false) } 
                             to='/' 
                             className={ current_route === '/'
-                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            ?   'bg-indigo-400 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
                                             :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
                                       }
                         >
@@ -46,7 +47,7 @@ const NavBar = ({ current_route }) => {
                             onClick={ () => setOpen(false) } 
                             to='/acerca-de' 
                             className={ current_route === '/acerca-de'
-                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            ?   'bg-indigo-400 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
                                             :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
                                       }
                         >
@@ -56,7 +57,7 @@ const NavBar = ({ current_route }) => {
                             onClick={ () => setOpen(false) } 
                             to='/proyectos' 
                             className={ current_route === '/proyectos'
-                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            ?   'bg-indigo-400 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
                                             :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
                                       }
                         >
@@ -66,7 +67,7 @@ const NavBar = ({ current_route }) => {
                             onClick={ () => setOpen(false) } 
                             to='contacto' 
                             className={ current_route === '/contacto'
-                                            ?   'bg-indigo-700 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
+                                            ?   'bg-indigo-400 md:bg-inherit md:text-indigo-700 transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-slate-100 hover:text-slate-300 md:hover:text-indigo-600 rounded md:hover:bg-transparent'
                                             :   'transition-all duration-[0.1s] py-2 pr-4 pl-4 md:p-0 text-gray-400 hover:text-white rounded md:hover:bg-transparent'  
                                       }
                         >
