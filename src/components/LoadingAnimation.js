@@ -1,8 +1,8 @@
-const LoadingAnimation = ({ bg_color }) => {
+const LoadingAnimation = ({ bg_color, size }) => {
 
     const styles = {
-        width: 38,
-        height: 38,
+        width: `${ size ? size : "40px" }`,
+        height: `${ size ? size : "40px" }`,
         border: `4px solid ${bg_color}`,
         borderBottom: '4px solid #1d4ed8',
         borderRadius: '50%',

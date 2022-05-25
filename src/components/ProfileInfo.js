@@ -10,7 +10,7 @@ const ProfileInfo = () => {
                     <p className="italic text-lg">Diego Maldonado Zamorano</p>
                 </div>
                 <div className="flex flex-wrap mb-2 items-center">
-                    <p className="w-fit text-xl mr-5 font-extrabold text-slate-200">Profesion:</p>
+                    <p className="w-fit text-xl mr-5 font-extrabold text-slate-200">Ocupación:</p>
                     <p className="italic text-lg">Desarrollador web</p>
                 </div>
                 <div className="flex flex-wrap mb-2 items-center">

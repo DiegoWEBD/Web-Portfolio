@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className='min-h-screen text-slate-200 bg-[#171717] p-2 font-mono'>
       <NavBar current_route={current_route} />
-      <section className='mt-14 md:mt-20 mx-auto overflow-hidden'>
+      <section className='mt-14 md:mt-20 mx-auto'>
         <PageRoutes 
           cache={cache} 
           setCache={setCache}

@@ -5,7 +5,7 @@ const Contact = () => {
 
     return (
         <motion.div 
-            className='w-10/12 max-w-md mx-auto p-6 border border-indigo-800 rounded-md bg-neutral-800 shadow-lg shadow-black/70'
+            className='mt-[-2rem] mx-auto max-w-sm sm:max-w-md p-6 border border-indigo-800 rounded-md bg-neutral-800 shadow-lg shadow-black/70'
             initial={ { x: "250%", transition: { duration: 0.2 } } }
             animate={ { x: 0, transition: { duration: 0.2 } } }
         >

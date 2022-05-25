@@ -10,7 +10,7 @@ const NavBar = ({ current_route }) => {
     }
 
     return(
-        <nav className='bg-neutral-900 px-4 py-2.5 border-b-2 border-indigo-700'>
+        <nav className='shadow-lg bg-[#101010] rounded-lg shadow-black/70 px-4 py-2.5 border-b-2 border-indigo-700'>
             <div className='flex flex-wrap justify-between items-center md:mx-7'>
                 <Link to='/' className='font-extrabold tracking-wider text-2xl italic text-white'>DWebDev</Link>
             

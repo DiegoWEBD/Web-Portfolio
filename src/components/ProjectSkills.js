@@ -25,7 +25,11 @@ const ProjectSkills = ({ project, cache, setCache }) => {
 
     return(
         <div className='flex items-center'>
-            <p className='bg-indigo-700 h-fit mr-5 px-2 rounded-full'>skills</p>
+            {
+                project_skills.length !== 0 && (
+                    <p className='bg-indigo-700 h-fit mr-5 px-2 rounded-full'>skills</p>
+                )
+            }
             <div className='flex flex-wrap max-w-full items-center w-full'>
                 {
                     project_skills.map(skill => 

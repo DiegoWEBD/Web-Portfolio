@@ -1,7 +1,7 @@
 const SuccessNotification = ({ children }) => {
 
     return(
-        <p className='text-[#24c82b] font-semibold border-2 rounded-md border-[#24c82b] text-center py-1'>
+        <p className='bg-green-500 text-white font-semibold tracking-wider border rounded-md border-green-600 shadow-md shadow-green-600/70 text-center py-1'>
             { children }
         </p>
     )

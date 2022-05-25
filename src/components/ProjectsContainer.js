@@ -30,7 +30,7 @@ const ProjectsContainer = ({ cache, setCache }) => {
     }, [])
 
     return (
-        <div className="flex flex-wrap justify-center">
+        <div className="pb-[10rem] md:pb-0 flex flex-wrap justify-center">
             
             { loading ? <LoadingAnimation bg_color='#171717' /> : null }
             {

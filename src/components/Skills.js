@@ -33,7 +33,7 @@ const Skills = ({ cache, setCache }) => {
     return (
         <div className="py-3 flex flex-wrap justify-center mx-auto md:max-h-96 overflow-auto md:w-11/12">
             
-            { loading ? <LoadingAnimation bg_color='#262626' /> : null }
+            { loading ? <LoadingAnimation bg_color='#262626' size='35px' /> : null }
             {
                 !loading && skills.length === 0
                     ?   <p className="p-2 border-2 border-indigo-700 rounded text-slate-200 mb-5 text-xl">Aún no tengo skills registradas :c</p>

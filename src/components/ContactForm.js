@@ -94,7 +94,7 @@ const ContactForm = () => {
                 { formik.touched.email && formik.errors.email ? <ErrorMessage>{formik.errors.email}</ErrorMessage> : null}
             </div>
 
-            <div className="mb-8">
+            <div className="mb-2">
                 <label className="block text-gray-700 font-bold mb-2">
                     Mensaje
                 </label>
@@ -107,26 +107,25 @@ const ContactForm = () => {
                 { formik.touched.message && formik.errors.message ? <ErrorMessage>{formik.errors.message}</ErrorMessage> : null}
             </div>
 
-            <div className='mb-8 flex justify-center'>
-            {
-                sending_message ? <LoadingAnimation bg_color='#f6f6f6' /> : null 
-            }
+            <div className='min-h-[35px]'>
+                <div className='flex justify-center'>
+                {
+                    sending_message ? <LoadingAnimation bg_color='#f6f6f6' size='33px' /> : null 
+                }
+                </div>
+
+                {
+                    message_sent ? <SuccessNotification>Tu mensaje se ha enviado</SuccessNotification> : null
+                }
+                    
+                {
+                    message_failed ? <ErrorNotification>Ha ocurrido un error, inténtalo otra vez</ErrorNotification> : null
+                }
+
             </div>
 
-            <div className='mb-8'>
-            {
-                message_sent ? <SuccessNotification>Mensaje enviado</SuccessNotification> : null
-            }
-            </div>
-
-            <div className='mb-8'>
-            {
-                message_failed ? <ErrorNotification>Ha ocurrido un error</ErrorNotification> : null
-            }
-            </div>
-
-            <div className='flex justify-center mb-5'>
-                <button type="submit" className=" text-indigo-700 hover:text-white hover:bg-indigo-700 transition-all text-lg border-[2px] sm:border-[3px] border-indigo-700 font-semibold tracking-wide py-1 px-6 rounded-full focus:outline-none focus:shadow-outline">
+            <div className='flex justify-center mt-5'>
+                <button type="submit" className=" text-indigo-700 hover:text-white hover:bg-indigo-700 hover:shadow-md hover:shadow-indigo-600/70 transition-all text-lg border-[2px] sm:border-[3px] border-indigo-700 font-semibold tracking-wide py-1 px-6 rounded-full focus:outline-none focus:shadow-outline">
                     Enviar
                 </button>
             </div>
