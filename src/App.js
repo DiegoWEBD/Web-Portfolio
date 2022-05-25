@@ -7,9 +7,8 @@ const App = () => {
   const [current_route, setCurrentRoute] = useState('/')
   const [cache, setCache] = useState({})
 
-  
   return (
-    <div className='min-h-screen text-slate-200 bg-[#171717] p-2 font-mono'>
+    <div className='min-h-screen text-slate-200 bg-[#171717] p-2 font-mono overflow-hidden'>
       <NavBar current_route={current_route} />
       <section className='mt-14 md:mt-20 mx-auto'>
         <PageRoutes 

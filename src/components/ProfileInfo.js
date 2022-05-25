@@ -1,3 +1,5 @@
+import { AiFillGithub } from 'react-icons/ai'
+
 const ProfileInfo = () => {
 
     return(
@@ -23,14 +25,14 @@ const ProfileInfo = () => {
                 </div>
                 <div className="flex flex-wrap mb-2 items-center">
                     <p className="w-fit text-xl mr-5 font-extrabold text-slate-200">Links:</p>
-                    <div className="flex">
+                    <div className="flex items-center">
                         <a 
                             className="hover:text-gray-400 transition-all mr-3" 
                             href="https://github.com/DiegoWEBD" 
                             rel='noopener noreferrer'
                             target="_blank"
                         >
-                            <i className="fab fa-github"></i>
+                            <AiFillGithub />
                         </a>
                         <a 
                             className="bg-white h-fit rounded hover:bg-gray-400 transition-all mr-3" 
@@ -43,7 +45,7 @@ const ProfileInfo = () => {
                     </div>
                 </div>
                 <div className="flex flex-wrap mb-2 items-center">
-                    <p className="w-fit text-xl mr-5 font-extrabold text-slate-200">CV:</p>
+                    <p className="w-fit text-xl mr-5 font-extrabold text-slate-200">Curriculum:</p>
                     <a href='https://api.diego-maldonado.com/admin/curriculum'>
                         <svg 
                             className="w-6 h-6 animate-bounce" 

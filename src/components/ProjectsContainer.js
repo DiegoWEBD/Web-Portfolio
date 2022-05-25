@@ -13,7 +13,7 @@ const ProjectsContainer = ({ cache, setCache }) => {
         setLoading(true)
         const response = await fetch(`${BASE_API_URL}/projects`)
         const data = await response.json()
-                
+
         setLoading(false)
         setProjects(data)
 
@@ -36,7 +36,7 @@ const ProjectsContainer = ({ cache, setCache }) => {
             {
                 !loading && projects.length === 0
                     ?   <p className="p-3 border-2 border-indigo-800 rounded text-white mb-5 text-xl">Aún no tengo ningún proyecto registrado :c</p>
-                    :   <ProjectsList projects={projects} cache={cache} setCache={setCache} />
+                    :   <ProjectsList projects={projects} />
             }
                 
         </div>
