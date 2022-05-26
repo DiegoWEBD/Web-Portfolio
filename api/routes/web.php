@@ -13,7 +13,6 @@ Route::get('/admin/curriculum', [AdminController::class, 'get_curriculum']);
 Route::get('/projects', [ProjectController::class, 'index']);
 Route::post('/projects', [ProjectsController::class, 'create']);
 Route::get('/skills', [SkillController::class, 'index']);
-Route::get('/projects/{project_id}/skills', [ProjectHasSkillsController::class, 'index']);
 
 Route::get('/contact/{name}/{email}/{message}', function($name, $email, $message) {
    

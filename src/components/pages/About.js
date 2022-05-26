@@ -10,7 +10,7 @@ const About = ({ cache, setCache }) => {
             initial={ { x: "150%", transition: { duration: 0.2 } } }
             animate={ { x: 0, transition: { duration: 0.2 } } }
         >
-            <div className="bg-gradient-to-t from-[#7022ce] to-indigo-500 md:w-1/3 rounded-xl text-slate-300 pt-1 md:pt-0 pb-8 md:pb-0 shadow-xl shadow-black/60 md:shadow-none">
+            <div className="bg-gradient-to-t from-[#7022ce] to-indigo-500 md:w-1/3 rounded-xl text-slate-300 shadow-xl shadow-black/60 md:shadow-none">
                 <ProfileInfo />
             </div>
             

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Project;
-use Exception;
+use App\Http\Controllers\ProjectHasSkillsController;
 
 class ProjectController extends Controller
 {
@@ -15,6 +14,9 @@ class ProjectController extends Controller
         foreach($projects as $project){
             $project->logo_route = asset("storage/projects_logos/".$project->logo_filename);
             unset($project->logo_filename);
+
+            $project_skills_controller = new ProjectHasSkillsController;
+            $project->skills = $project_skills_controller->index($project->id);
         }
         
         return $projects;

@@ -4,8 +4,12 @@ const ProfileInfo = () => {
 
     return(
         <div>
-            <img alt='DWebDev' src={ require('../img/principal_logo.png') } className="mx-auto h-28 md:h-24 lg:h-28 my-14 rounded-full shadow-xl shadow-black" /> 
-                
+            <div className='h-[13rem] flex items-center'>
+                <div className='mx-auto h-[9.5rem] w-[9.5rem] md:h-[8.5rem] md:w-[8.5rem] lg:h-[9.5rem] lg:w-[9.5rem] rounded-full shadow-xl shadow-black/70 overflow-hidden'>
+                    <img alt='DWebDev' src={ require('../img/principal_logo.png') } className='h-[9.5rem] w-[9.5rem] md:h-[8.5rem] md:w-[8.5rem] lg:h-[9.5rem] lg:w-[9.5rem]' /> 
+                </div>
+            </div>
+
             <div className="w-fit mx-auto p-4">
                 <div className="flex flex-wrap mb-2 items-center">
                     <p className="w-fit text-xl mr-5 font-extrabold text-slate-200">Nombre:</p>
